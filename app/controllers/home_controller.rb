@@ -8,12 +8,14 @@ class HomeController < ApplicationController
     satisfied = @userplans.pluck(:satisfied).sort.reverse
 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|
-      c.title(text: "satisfied graph")
-      c.xAxis(categories: users_tmp)
-      c.yAxis(title: {text: '満足度'},
-       ceiling: 100)
-      c.series(name: " ",data: satisfied)
-      c.chart(type: "column")
+      c.title(style: {fontSize: '50px'}, text: "顧客別満足度")
+      c.xAxis(categories: users_tmp,
+        labels: {style: {fontSize: '20px'}})
+      c.yAxis(title: {style: {fontSize: '50px'}, text: '満足度'},
+        ceiling: 100,
+        labels: {style: {fontSize: '30px'}})
+      c.series(name:"ユーザーID", data: satisfied)
+      c.chart(type: "column", height: 700)
    end
   end
 
