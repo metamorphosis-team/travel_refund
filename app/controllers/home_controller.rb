@@ -12,8 +12,14 @@ class HomeController < ApplicationController
       c.xAxis(categories: users_tmp)
       c.yAxis(title: {text: '満足度'},
        ceiling: 100)
-      c.series(name: "人", data: satisfied)
+      c.series(name: " ",data: satisfied)
       c.chart(type: "column")
    end
+  end
+
+  def data
+    @userplans = Userplan.all
+    @users = User.all
+    @plans = Plan.all
   end
 end
