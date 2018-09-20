@@ -1,4 +1,16 @@
 <h1>ようこそ、metamorphosisへ</h1>
 <p>Find me in app/views/home/top.html.erb</p>
 
+<% @userplans.each do |userplan| %>
+<%= userplan.user_id %>
+<%= userplan.plan_id %>
+<% end %>
+
+<% @users.each do |user| %>
+<%= user.name %>
+<% end %>
+
+<% @plans.each do |plan| %>
+<%= plan.plan_name %>
+<% end %>
 
