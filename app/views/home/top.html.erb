@@ -2,8 +2,8 @@
 <p>Find me in app/views/home/top.html.erb</p>
 
 <% @userplans.each do |userplan| %>
-<%= userplan.user_id %>
-<%= userplan.plan_id %>
+<%= userplan.user.name %>
+<%= userplan.plan.plan_name %>
 <% end %>
 
 <% @users.each do |user| %>
@@ -12,5 +12,7 @@
 
 <% @plans.each do |plan| %>
 <%= plan.plan_name %>
+
+<%= plan.plan_date %>
 <% end %>
 

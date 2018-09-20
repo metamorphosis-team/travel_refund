@@ -1464,3 +1464,1247 @@ Processing by HomeController#top as HTML
 Completed 200 OK in 203ms (Views: 190.4ms | ActiveRecord: 2.7ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180920051131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180920051131_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920051131"]]
+  ↳ bin/rails:9
+  [1m[35m (14.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePlans (20180920051522)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "plans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "plan_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180920051522_create_plans.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920051522"]]
+  ↳ bin/rails:9
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUserplans (20180920051716)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "userplans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "plan_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180920051716_create_userplans.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920051716"]]
+  ↳ bin/rails:9
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColumnUserplan (20180920064155)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "userplans" ADD "satisfied" integer[0m
+  ↳ db/migrate/20180920064155_add_column_userplan.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920064155"]]
+  ↳ bin/rails:9
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColumnPlan (20180920064408)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "plans" ADD "plan_date" date[0m
+  ↳ db/migrate/20180920064408_add_column_plan.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920064408"]]
+  ↳ bin/rails:9
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-20 07:05:22.109566"], ["updated_at", "2018-09-20 07:05:22.109566"]]
+  ↳ bin/rails:9
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田太郎"], ["created_at", "2018-09-20 07:05:28.396676"], ["updated_at", "2018-09-20 07:05:28.396676"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田二郎"], ["created_at", "2018-09-20 07:05:28.412985"], ["updated_at", "2018-09-20 07:05:28.412985"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田三郎"], ["created_at", "2018-09-20 07:05:28.428186"], ["updated_at", "2018-09-20 07:05:28.428186"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田四郎"], ["created_at", "2018-09-20 07:05:28.443510"], ["updated_at", "2018-09-20 07:05:28.443510"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田五郎"], ["created_at", "2018-09-20 07:05:28.465086"], ["updated_at", "2018-09-20 07:05:28.465086"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中太郎"], ["created_at", "2018-09-20 07:05:28.483389"], ["updated_at", "2018-09-20 07:05:28.483389"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中二郎"], ["created_at", "2018-09-20 07:05:28.505216"], ["updated_at", "2018-09-20 07:05:28.505216"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中三郎"], ["created_at", "2018-09-20 07:05:28.527567"], ["updated_at", "2018-09-20 07:05:28.527567"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (20.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中四郎"], ["created_at", "2018-09-20 07:05:28.560507"], ["updated_at", "2018-09-20 07:05:28.560507"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中五郎"], ["created_at", "2018-09-20 07:05:28.575713"], ["updated_at", "2018-09-20 07:05:28.575713"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤太郎"], ["created_at", "2018-09-20 07:05:28.591797"], ["updated_at", "2018-09-20 07:05:28.591797"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤二郎"], ["created_at", "2018-09-20 07:05:28.608882"], ["updated_at", "2018-09-20 07:05:28.608882"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤三郎"], ["created_at", "2018-09-20 07:05:28.627560"], ["updated_at", "2018-09-20 07:05:28.627560"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤四郎"], ["created_at", "2018-09-20 07:05:28.651804"], ["updated_at", "2018-09-20 07:05:28.651804"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (20.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤五郎"], ["created_at", "2018-09-20 07:05:28.678429"], ["updated_at", "2018-09-20 07:05:28.678429"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木太郎"], ["created_at", "2018-09-20 07:05:28.703012"], ["updated_at", "2018-09-20 07:05:28.703012"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木二郎"], ["created_at", "2018-09-20 07:05:28.721369"], ["updated_at", "2018-09-20 07:05:28.721369"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木三郎"], ["created_at", "2018-09-20 07:05:28.743595"], ["updated_at", "2018-09-20 07:05:28.743595"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木四郎"], ["created_at", "2018-09-20 07:05:28.761132"], ["updated_at", "2018-09-20 07:05:28.761132"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (22.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木五郎"], ["created_at", "2018-09-20 07:05:28.791988"], ["updated_at", "2018-09-20 07:05:28.791988"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (22.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (1.4ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ハワイ"], ["created_at", "2018-09-20 07:05:28.848841"], ["updated_at", "2018-09-20 07:05:28.848841"], ["plan_date", "2018-09-24"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "グアム"], ["created_at", "2018-09-20 07:05:28.871551"], ["updated_at", "2018-09-20 07:05:28.871551"], ["plan_date", "2018-09-24"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.8ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "セブ島"], ["created_at", "2018-09-20 07:05:28.891747"], ["updated_at", "2018-09-20 07:05:28.891747"], ["plan_date", "2018-09-24"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "京都"], ["created_at", "2018-09-20 07:05:28.912789"], ["updated_at", "2018-09-20 07:05:28.912789"], ["plan_date", "2018-09-25"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "大阪"], ["created_at", "2018-09-20 07:05:28.932810"], ["updated_at", "2018-09-20 07:05:28.932810"], ["plan_date", "2018-09-25"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (3.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "北海道"], ["created_at", "2018-09-20 07:05:28.956624"], ["updated_at", "2018-09-20 07:05:28.956624"], ["plan_date", "2018-09-25"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (22.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "福岡"], ["created_at", "2018-09-20 07:05:28.992901"], ["updated_at", "2018-09-20 07:05:28.992901"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "東京"], ["created_at", "2018-09-20 07:05:29.014538"], ["updated_at", "2018-09-20 07:05:29.014538"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "バンコク"], ["created_at", "2018-09-20 07:05:29.044856"], ["updated_at", "2018-09-20 07:05:29.044856"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ジャカルタ"], ["created_at", "2018-09-20 07:05:29.066276"], ["updated_at", "2018-09-20 07:05:29.066276"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (1.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "シンガポール"], ["created_at", "2018-09-20 07:05:29.090264"], ["updated_at", "2018-09-20 07:05:29.090264"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "メルボルン"], ["created_at", "2018-09-20 07:05:29.114091"], ["updated_at", "2018-09-20 07:05:29.114091"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.4ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "シドニー"], ["created_at", "2018-09-20 07:05:29.135067"], ["updated_at", "2018-09-20 07:05:29.135067"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ニューヨーク"], ["created_at", "2018-09-20 07:05:29.157157"], ["updated_at", "2018-09-20 07:05:29.157157"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ロサンゼルス"], ["created_at", "2018-09-20 07:05:29.173009"], ["updated_at", "2018-09-20 07:05:29.173009"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ラスベガス"], ["created_at", "2018-09-20 07:05:29.189437"], ["updated_at", "2018-09-20 07:05:29.189437"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "フロリダ"], ["created_at", "2018-09-20 07:05:29.204712"], ["updated_at", "2018-09-20 07:05:29.204712"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "韓国"], ["created_at", "2018-09-20 07:05:29.221048"], ["updated_at", "2018-09-20 07:05:29.221048"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "上海"], ["created_at", "2018-09-20 07:05:29.239492"], ["updated_at", "2018-09-20 07:05:29.239492"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "イギリス"], ["created_at", "2018-09-20 07:05:29.255443"], ["updated_at", "2018-09-20 07:05:29.255443"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (1.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "フランス"], ["created_at", "2018-09-20 07:05:29.273906"], ["updated_at", "2018-09-20 07:05:29.273906"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (1.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "南極"], ["created_at", "2018-09-20 07:05:29.295717"], ["updated_at", "2018-09-20 07:05:29.295717"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "イタリア"], ["created_at", "2018-09-20 07:05:29.316329"], ["updated_at", "2018-09-20 07:05:29.316329"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (1.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "台湾"], ["created_at", "2018-09-20 07:05:29.337300"], ["updated_at", "2018-09-20 07:05:29.337300"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "北極"], ["created_at", "2018-09-20 07:05:29.362262"], ["updated_at", "2018-09-20 07:05:29.362262"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (1.9ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "沖縄"], ["created_at", "2018-09-20 07:05:29.387206"], ["updated_at", "2018-09-20 07:05:29.387206"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.8ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "モスクワ"], ["created_at", "2018-09-20 07:05:29.418238"], ["updated_at", "2018-09-20 07:05:29.418238"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "クアラルンプール"], ["created_at", "2018-09-20 07:05:29.439669"], ["updated_at", "2018-09-20 07:05:29.439669"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "アンカラ"], ["created_at", "2018-09-20 07:05:29.463627"], ["updated_at", "2018-09-20 07:05:29.463627"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "イスタンブール"], ["created_at", "2018-09-20 07:05:29.482326"], ["updated_at", "2018-09-20 07:05:29.482326"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (2.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["plan_id", 1], ["created_at", "2018-09-20 07:05:29.531972"], ["updated_at", "2018-09-20 07:05:29.531972"], ["satisfied", 80]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["plan_id", 15], ["created_at", "2018-09-20 07:05:29.555180"], ["updated_at", "2018-09-20 07:05:29.555180"], ["satisfied", 50]]
+  ↳ db/seeds.rb:21
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["plan_id", 21], ["created_at", "2018-09-20 07:05:29.574675"], ["updated_at", "2018-09-20 07:05:29.574675"], ["satisfied", 80]]
+  ↳ db/seeds.rb:21
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["plan_id", 2], ["created_at", "2018-09-20 07:05:29.602463"], ["updated_at", "2018-09-20 07:05:29.602463"], ["satisfied", 75]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.9ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["plan_id", 22], ["created_at", "2018-09-20 07:05:29.624522"], ["updated_at", "2018-09-20 07:05:29.624522"], ["satisfied", 65]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["plan_id", 3], ["created_at", "2018-09-20 07:05:29.648110"], ["updated_at", "2018-09-20 07:05:29.648110"], ["satisfied", 15]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["plan_id", 23], ["created_at", "2018-09-20 07:05:29.668244"], ["updated_at", "2018-09-20 07:05:29.668244"], ["satisfied", 30]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["plan_id", 4], ["created_at", "2018-09-20 07:05:29.687953"], ["updated_at", "2018-09-20 07:05:29.687953"], ["satisfied", 60]]
+  ↳ db/seeds.rb:21
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["plan_id", 24], ["created_at", "2018-09-20 07:05:29.716354"], ["updated_at", "2018-09-20 07:05:29.716354"], ["satisfied", 95]]
+  ↳ db/seeds.rb:21
+  [1m[35m (17.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["plan_id", 5], ["created_at", "2018-09-20 07:05:29.743448"], ["updated_at", "2018-09-20 07:05:29.743448"], ["satisfied", 100]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["plan_id", 14], ["created_at", "2018-09-20 07:05:29.764984"], ["updated_at", "2018-09-20 07:05:29.764984"], ["satisfied", 100]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["plan_id", 25], ["created_at", "2018-09-20 07:05:29.783739"], ["updated_at", "2018-09-20 07:05:29.783739"], ["satisfied", 90]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["plan_id", 6], ["created_at", "2018-09-20 07:05:29.807474"], ["updated_at", "2018-09-20 07:05:29.807474"], ["satisfied", 55]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["plan_id", 16], ["created_at", "2018-09-20 07:05:29.835269"], ["updated_at", "2018-09-20 07:05:29.835269"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["plan_id", 26], ["created_at", "2018-09-20 07:05:29.858691"], ["updated_at", "2018-09-20 07:05:29.858691"], ["satisfied", 63]]
+  ↳ db/seeds.rb:21
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["plan_id", 7], ["created_at", "2018-09-20 07:05:29.885561"], ["updated_at", "2018-09-20 07:05:29.885561"], ["satisfied", 77]]
+  ↳ db/seeds.rb:21
+  [1m[35m (16.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["plan_id", 17], ["created_at", "2018-09-20 07:05:29.909622"], ["updated_at", "2018-09-20 07:05:29.909622"], ["satisfied", 90]]
+  ↳ db/seeds.rb:21
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["plan_id", 27], ["created_at", "2018-09-20 07:05:29.930353"], ["updated_at", "2018-09-20 07:05:29.930353"], ["satisfied", 47]]
+  ↳ db/seeds.rb:21
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (2.0ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 8], ["plan_id", 8], ["created_at", "2018-09-20 07:05:29.951405"], ["updated_at", "2018-09-20 07:05:29.951405"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 8], ["plan_id", 18], ["created_at", "2018-09-20 07:05:29.974477"], ["updated_at", "2018-09-20 07:05:29.974477"], ["satisfied", 95]]
+  ↳ db/seeds.rb:21
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 8], ["plan_id", 28], ["created_at", "2018-09-20 07:05:29.996796"], ["updated_at", "2018-09-20 07:05:29.996796"], ["satisfied", 46]]
+  ↳ db/seeds.rb:21
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.1ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 9], ["plan_id", 9], ["created_at", "2018-09-20 07:05:30.017873"], ["updated_at", "2018-09-20 07:05:30.017873"], ["satisfied", 90]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 9], ["plan_id", 29], ["created_at", "2018-09-20 07:05:30.038002"], ["updated_at", "2018-09-20 07:05:30.038002"], ["satisfied", 99]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["plan_id", 10], ["created_at", "2018-09-20 07:05:30.061023"], ["updated_at", "2018-09-20 07:05:30.061023"], ["satisfied", 15]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["plan_id", 30], ["created_at", "2018-09-20 07:05:30.081658"], ["updated_at", "2018-09-20 07:05:30.081658"], ["satisfied", 10]]
+  ↳ db/seeds.rb:21
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.3ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["plan_id", 11], ["created_at", "2018-09-20 07:05:30.106204"], ["updated_at", "2018-09-20 07:05:30.106204"], ["satisfied", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["plan_id", 21], ["created_at", "2018-09-20 07:05:30.130890"], ["updated_at", "2018-09-20 07:05:30.130890"], ["satisfied", 13]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 12], ["plan_id", 12], ["created_at", "2018-09-20 07:05:30.157317"], ["updated_at", "2018-09-20 07:05:30.157317"], ["satisfied", 76]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 12], ["plan_id", 22], ["created_at", "2018-09-20 07:05:30.184697"], ["updated_at", "2018-09-20 07:05:30.184697"], ["satisfied", 65]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.2ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 13], ["plan_id", 13], ["created_at", "2018-09-20 07:05:30.206241"], ["updated_at", "2018-09-20 07:05:30.206241"], ["satisfied", 75]]
+  ↳ db/seeds.rb:21
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 13], ["plan_id", 23], ["created_at", "2018-09-20 07:05:30.232755"], ["updated_at", "2018-09-20 07:05:30.232755"], ["satisfied", 89]]
+  ↳ db/seeds.rb:21
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.2ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 13], ["plan_id", 5], ["created_at", "2018-09-20 07:05:30.256390"], ["updated_at", "2018-09-20 07:05:30.256390"], ["satisfied", 77]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.3ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 14], ["plan_id", 10], ["created_at", "2018-09-20 07:05:30.276418"], ["updated_at", "2018-09-20 07:05:30.276418"], ["satisfied", 3]]
+  ↳ db/seeds.rb:21
+  [1m[35m (20.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 14], ["plan_id", 14], ["created_at", "2018-09-20 07:05:30.304296"], ["updated_at", "2018-09-20 07:05:30.304296"], ["satisfied", 99]]
+  ↳ db/seeds.rb:21
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.8ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 14], ["plan_id", 24], ["created_at", "2018-09-20 07:05:30.328076"], ["updated_at", "2018-09-20 07:05:30.328076"], ["satisfied", 87]]
+  ↳ db/seeds.rb:21
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 15], ["plan_id", 15], ["created_at", "2018-09-20 07:05:30.358296"], ["updated_at", "2018-09-20 07:05:30.358296"], ["satisfied", 75]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.9ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 15], ["plan_id", 25], ["created_at", "2018-09-20 07:05:30.387595"], ["updated_at", "2018-09-20 07:05:30.387595"], ["satisfied", 63]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 16], ["plan_id", 16], ["created_at", "2018-09-20 07:05:30.412055"], ["updated_at", "2018-09-20 07:05:30.412055"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (1.3ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 16], ["plan_id", 24], ["created_at", "2018-09-20 07:05:30.432333"], ["updated_at", "2018-09-20 07:05:30.432333"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 17], ["plan_id", 7], ["created_at", "2018-09-20 07:05:30.452182"], ["updated_at", "2018-09-20 07:05:30.452182"], ["satisfied", 77]]
+  ↳ db/seeds.rb:21
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 17], ["plan_id", 17], ["created_at", "2018-09-20 07:05:30.473631"], ["updated_at", "2018-09-20 07:05:30.473631"], ["satisfied", 74]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 17], ["plan_id", 27], ["created_at", "2018-09-20 07:05:30.494219"], ["updated_at", "2018-09-20 07:05:30.494219"], ["satisfied", 30]]
+  ↳ db/seeds.rb:21
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 18], ["plan_id", 8], ["created_at", "2018-09-20 07:05:30.519562"], ["updated_at", "2018-09-20 07:05:30.519562"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 18], ["plan_id", 18], ["created_at", "2018-09-20 07:05:30.544139"], ["updated_at", "2018-09-20 07:05:30.544139"], ["satisfied", 90]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 18], ["plan_id", 28], ["created_at", "2018-09-20 07:05:30.564329"], ["updated_at", "2018-09-20 07:05:30.564329"], ["satisfied", 33]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 19], ["plan_id", 9], ["created_at", "2018-09-20 07:05:30.587363"], ["updated_at", "2018-09-20 07:05:30.587363"], ["satisfied", 91]]
+  ↳ db/seeds.rb:21
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 19], ["plan_id", 19], ["created_at", "2018-09-20 07:05:30.611552"], ["updated_at", "2018-09-20 07:05:30.611552"], ["satisfied", 76]]
+  ↳ db/seeds.rb:21
+  [1m[35m (25.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.6ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 20], ["plan_id", 10], ["created_at", "2018-09-20 07:05:30.643208"], ["updated_at", "2018-09-20 07:05:30.643208"], ["satisfied", 10]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.9ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 20], ["plan_id", 20], ["created_at", "2018-09-20 07:05:30.668122"], ["updated_at", "2018-09-20 07:05:30.668122"], ["satisfied", 80]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 20], ["plan_id", 30], ["created_at", "2018-09-20 07:05:30.691907"], ["updated_at", "2018-09-20 07:05:30.691907"], ["satisfied", 12]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+Started GET "/" for 127.0.0.1 at 2018-09-20 16:05:37 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  [1m[36mUserplan Load (0.3ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/top.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/top.html.erb:9
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/top.html.erb:13
+  Rendered home/top.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 203ms (Views: 189.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 16:07:38 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  [1m[36mUserplan Load (0.4ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/top.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/top.html.erb:9
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/top.html.erb:13
+  Rendered home/top.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 16:14:27 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  [1m[36mUserplan Load (0.3ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/top.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/top.html.erb:9
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/top.html.erb:13
+  Rendered home/top.html.erb within layouts/application (69.2ms)
+Completed 200 OK in 107ms (Views: 82.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 16:15:21 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  [1m[36mUserplan Load (0.3ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/top.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/top.html.erb:9
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/top.html.erb:13
+  Rendered home/top.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 86ms (Views: 79.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 16:15:33 +0900
+Processing by HomeController#top as HTML
+  Rendering home/top.html.erb within layouts/application
+  [1m[36mUserplan Load (0.3ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/top.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.3ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/top.html.erb:9
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/top.html.erb:13
+  Rendered home/top.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 91ms (Views: 83.4ms | ActiveRecord: 5.7ms)
+
+
