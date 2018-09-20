@@ -7839,3 +7839,679 @@ Processing by HomeController#top as HTML
 Completed 200 OK in 105ms (Views: 92.6ms | ActiveRecord: 7.7ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180920051131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180920051131_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920051131"]]
+  ↳ bin/rails:9
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePlans (20180920051522)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "plans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "plan_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180920051522_create_plans.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920051522"]]
+  ↳ bin/rails:9
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUserplans (20180920051716)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "userplans" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "plan_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180920051716_create_userplans.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920051716"]]
+  ↳ bin/rails:9
+  [1m[35m (21.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColumnUserplan (20180920064155)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "userplans" ADD "satisfied" integer[0m
+  ↳ db/migrate/20180920064155_add_column_userplan.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920064155"]]
+  ↳ bin/rails:9
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColumnPlan (20180920064408)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "plans" ADD "plan_date" date[0m
+  ↳ db/migrate/20180920064408_add_column_plan.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180920064408"]]
+  ↳ bin/rails:9
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-20 10:05:07.073337"], ["updated_at", "2018-09-20 10:05:07.073337"]]
+  ↳ bin/rails:9
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田太郎"], ["created_at", "2018-09-20 10:05:12.768899"], ["updated_at", "2018-09-20 10:05:12.768899"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (18.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田二郎"], ["created_at", "2018-09-20 10:05:12.789637"], ["updated_at", "2018-09-20 10:05:12.789637"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田三郎"], ["created_at", "2018-09-20 10:05:12.806984"], ["updated_at", "2018-09-20 10:05:12.806984"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田四郎"], ["created_at", "2018-09-20 10:05:12.825106"], ["updated_at", "2018-09-20 10:05:12.825106"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "山田五郎"], ["created_at", "2018-09-20 10:05:12.841621"], ["updated_at", "2018-09-20 10:05:12.841621"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中太郎"], ["created_at", "2018-09-20 10:05:12.857822"], ["updated_at", "2018-09-20 10:05:12.857822"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中二郎"], ["created_at", "2018-09-20 10:05:12.876165"], ["updated_at", "2018-09-20 10:05:12.876165"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中三郎"], ["created_at", "2018-09-20 10:05:12.901868"], ["updated_at", "2018-09-20 10:05:12.901868"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中四郎"], ["created_at", "2018-09-20 10:05:12.920041"], ["updated_at", "2018-09-20 10:05:12.920041"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "田中五郎"], ["created_at", "2018-09-20 10:05:12.936159"], ["updated_at", "2018-09-20 10:05:12.936159"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤太郎"], ["created_at", "2018-09-20 10:05:12.952743"], ["updated_at", "2018-09-20 10:05:12.952743"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤二郎"], ["created_at", "2018-09-20 10:05:12.970066"], ["updated_at", "2018-09-20 10:05:12.970066"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤三郎"], ["created_at", "2018-09-20 10:05:12.986584"], ["updated_at", "2018-09-20 10:05:12.986584"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤四郎"], ["created_at", "2018-09-20 10:05:13.005237"], ["updated_at", "2018-09-20 10:05:13.005237"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "佐藤五郎"], ["created_at", "2018-09-20 10:05:13.026871"], ["updated_at", "2018-09-20 10:05:13.026871"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木太郎"], ["created_at", "2018-09-20 10:05:13.043179"], ["updated_at", "2018-09-20 10:05:13.043179"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木二郎"], ["created_at", "2018-09-20 10:05:13.060963"], ["updated_at", "2018-09-20 10:05:13.060963"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木三郎"], ["created_at", "2018-09-20 10:05:13.078100"], ["updated_at", "2018-09-20 10:05:13.078100"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木四郎"], ["created_at", "2018-09-20 10:05:13.094502"], ["updated_at", "2018-09-20 10:05:13.094502"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "鈴木五郎"], ["created_at", "2018-09-20 10:05:13.111239"], ["updated_at", "2018-09-20 10:05:13.111239"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ハワイ"], ["created_at", "2018-09-20 10:05:13.142605"], ["updated_at", "2018-09-20 10:05:13.142605"], ["plan_date", "2018-09-24"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "グアム"], ["created_at", "2018-09-20 10:05:13.159823"], ["updated_at", "2018-09-20 10:05:13.159823"], ["plan_date", "2018-09-24"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "セブ島"], ["created_at", "2018-09-20 10:05:13.179830"], ["updated_at", "2018-09-20 10:05:13.179830"], ["plan_date", "2018-09-24"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (28.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "京都"], ["created_at", "2018-09-20 10:05:13.210940"], ["updated_at", "2018-09-20 10:05:13.210940"], ["plan_date", "2018-09-25"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (18.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "大阪"], ["created_at", "2018-09-20 10:05:13.231183"], ["updated_at", "2018-09-20 10:05:13.231183"], ["plan_date", "2018-09-25"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "北海道"], ["created_at", "2018-09-20 10:05:13.247098"], ["updated_at", "2018-09-20 10:05:13.247098"], ["plan_date", "2018-09-25"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.3ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "福岡"], ["created_at", "2018-09-20 10:05:13.263494"], ["updated_at", "2018-09-20 10:05:13.263494"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "東京"], ["created_at", "2018-09-20 10:05:13.280358"], ["updated_at", "2018-09-20 10:05:13.280358"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "バンコク"], ["created_at", "2018-09-20 10:05:13.298708"], ["updated_at", "2018-09-20 10:05:13.298708"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ジャカルタ"], ["created_at", "2018-09-20 10:05:13.325338"], ["updated_at", "2018-09-20 10:05:13.325338"], ["plan_date", "2018-09-26"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (19.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "シンガポール"], ["created_at", "2018-09-20 10:05:13.349274"], ["updated_at", "2018-09-20 10:05:13.349274"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "メルボルン"], ["created_at", "2018-09-20 10:05:13.367373"], ["updated_at", "2018-09-20 10:05:13.367373"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (20.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "シドニー"], ["created_at", "2018-09-20 10:05:13.391022"], ["updated_at", "2018-09-20 10:05:13.391022"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ニューヨーク"], ["created_at", "2018-09-20 10:05:13.413695"], ["updated_at", "2018-09-20 10:05:13.413695"], ["plan_date", "2018-09-27"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (23.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ロサンゼルス"], ["created_at", "2018-09-20 10:05:13.441026"], ["updated_at", "2018-09-20 10:05:13.441026"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "ラスベガス"], ["created_at", "2018-09-20 10:05:13.462856"], ["updated_at", "2018-09-20 10:05:13.462856"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "フロリダ"], ["created_at", "2018-09-20 10:05:13.484083"], ["updated_at", "2018-09-20 10:05:13.484083"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "韓国"], ["created_at", "2018-09-20 10:05:13.510194"], ["updated_at", "2018-09-20 10:05:13.510194"], ["plan_date", "2018-09-28"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "上海"], ["created_at", "2018-09-20 10:05:13.585795"], ["updated_at", "2018-09-20 10:05:13.585795"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "イギリス"], ["created_at", "2018-09-20 10:05:13.602416"], ["updated_at", "2018-09-20 10:05:13.602416"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "フランス"], ["created_at", "2018-09-20 10:05:13.617583"], ["updated_at", "2018-09-20 10:05:13.617583"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.2ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "南極"], ["created_at", "2018-09-20 10:05:13.634535"], ["updated_at", "2018-09-20 10:05:13.634535"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (12.1ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "イタリア"], ["created_at", "2018-09-20 10:05:13.664619"], ["updated_at", "2018-09-20 10:05:13.664619"], ["plan_date", "2018-09-29"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "台湾"], ["created_at", "2018-09-20 10:05:13.703761"], ["updated_at", "2018-09-20 10:05:13.703761"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "北極"], ["created_at", "2018-09-20 10:05:13.723414"], ["updated_at", "2018-09-20 10:05:13.723414"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (22.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.7ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "沖縄"], ["created_at", "2018-09-20 10:05:13.750513"], ["updated_at", "2018-09-20 10:05:13.750513"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (50.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "モスクワ"], ["created_at", "2018-09-20 10:05:13.810820"], ["updated_at", "2018-09-20 10:05:13.810820"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (36.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "クアラルンプール"], ["created_at", "2018-09-20 10:05:13.852301"], ["updated_at", "2018-09-20 10:05:13.852301"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (52.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.5ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "アンカラ"], ["created_at", "2018-09-20 10:05:13.908442"], ["updated_at", "2018-09-20 10:05:13.908442"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPlan Create (0.6ms)[0m  [1m[32mINSERT INTO "plans" ("plan_name", "created_at", "updated_at", "plan_date") VALUES (?, ?, ?, ?)[0m  [["plan_name", "イスタンブール"], ["created_at", "2018-09-20 10:05:13.932953"], ["updated_at", "2018-09-20 10:05:13.932953"], ["plan_date", "2018-09-30"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (98.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.3ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["plan_id", 1], ["created_at", "2018-09-20 10:05:14.065960"], ["updated_at", "2018-09-20 10:05:14.065960"], ["satisfied", 80]]
+  ↳ db/seeds.rb:21
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 2], ["plan_id", 2], ["created_at", "2018-09-20 10:05:14.094130"], ["updated_at", "2018-09-20 10:05:14.094130"], ["satisfied", 75]]
+  ↳ db/seeds.rb:21
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["plan_id", 3], ["created_at", "2018-09-20 10:05:14.122608"], ["updated_at", "2018-09-20 10:05:14.122608"], ["satisfied", 15]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["plan_id", 4], ["created_at", "2018-09-20 10:05:14.143873"], ["updated_at", "2018-09-20 10:05:14.143873"], ["satisfied", 60]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["plan_id", 5], ["created_at", "2018-09-20 10:05:14.165216"], ["updated_at", "2018-09-20 10:05:14.165216"], ["satisfied", 100]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 6], ["plan_id", 6], ["created_at", "2018-09-20 10:05:14.196553"], ["updated_at", "2018-09-20 10:05:14.196553"], ["satisfied", 55]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.2ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 7], ["plan_id", 7], ["created_at", "2018-09-20 10:05:14.216902"], ["updated_at", "2018-09-20 10:05:14.216902"], ["satisfied", 77]]
+  ↳ db/seeds.rb:21
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 8], ["plan_id", 8], ["created_at", "2018-09-20 10:05:14.240256"], ["updated_at", "2018-09-20 10:05:14.240256"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (24.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 9], ["plan_id", 9], ["created_at", "2018-09-20 10:05:14.275476"], ["updated_at", "2018-09-20 10:05:14.275476"], ["satisfied", 90]]
+  ↳ db/seeds.rb:21
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 10], ["plan_id", 10], ["created_at", "2018-09-20 10:05:14.298356"], ["updated_at", "2018-09-20 10:05:14.298356"], ["satisfied", 15]]
+  ↳ db/seeds.rb:21
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 11], ["plan_id", 11], ["created_at", "2018-09-20 10:05:14.319335"], ["updated_at", "2018-09-20 10:05:14.319335"], ["satisfied", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 12], ["plan_id", 12], ["created_at", "2018-09-20 10:05:14.340085"], ["updated_at", "2018-09-20 10:05:14.340085"], ["satisfied", 76]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 13], ["plan_id", 13], ["created_at", "2018-09-20 10:05:14.360842"], ["updated_at", "2018-09-20 10:05:14.360842"], ["satisfied", 75]]
+  ↳ db/seeds.rb:21
+  [1m[35m (26.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 14], ["plan_id", 10], ["created_at", "2018-09-20 10:05:14.397884"], ["updated_at", "2018-09-20 10:05:14.397884"], ["satisfied", 3]]
+  ↳ db/seeds.rb:21
+  [1m[35m (21.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.3ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 15], ["plan_id", 15], ["created_at", "2018-09-20 10:05:14.426949"], ["updated_at", "2018-09-20 10:05:14.426949"], ["satisfied", 75]]
+  ↳ db/seeds.rb:21
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.3ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 16], ["plan_id", 16], ["created_at", "2018-09-20 10:05:14.444134"], ["updated_at", "2018-09-20 10:05:14.444134"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (18.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.7ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 17], ["plan_id", 7], ["created_at", "2018-09-20 10:05:14.468530"], ["updated_at", "2018-09-20 10:05:14.468530"], ["satisfied", 77]]
+  ↳ db/seeds.rb:21
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 18], ["plan_id", 8], ["created_at", "2018-09-20 10:05:14.487846"], ["updated_at", "2018-09-20 10:05:14.487846"], ["satisfied", 88]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.5ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 19], ["plan_id", 9], ["created_at", "2018-09-20 10:05:14.512653"], ["updated_at", "2018-09-20 10:05:14.512653"], ["satisfied", 91]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mUserplan Create (0.4ms)[0m  [1m[32mINSERT INTO "userplans" ("user_id", "plan_id", "created_at", "updated_at", "satisfied") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 20], ["plan_id", 10], ["created_at", "2018-09-20 10:05:14.537496"], ["updated_at", "2018-09-20 10:05:14.537496"], ["satisfied", 10]]
+  ↳ db/seeds.rb:21
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+Started GET "/" for 127.0.0.1 at 2018-09-20 19:05:24 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  [1m[36mUserplan Load (0.2ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/top.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/top.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/top.html.erb:13
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/top.html.erb:20
+  Rendered home/top.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 248ms (Views: 224.2ms | ActiveRecord: 10.7ms)
+
+
