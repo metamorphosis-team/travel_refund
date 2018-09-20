@@ -12,7 +12,7 @@ class HomeController < ApplicationController
       # X軸の名称を設定 '月'
       c.xAxis(categories: users_tmp, title: {text: '人'})
       # Y軸の名称を設定 '円'
-      c.yAxis(title: {text: '満足度'})
+      c.yAxis(categories: satisfied, title: {text: '満足度'})
       c.series(name: "A", data: satisfied)
       # 判例を右側に配置
       @debug = "Ok"
