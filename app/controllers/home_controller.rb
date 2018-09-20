@@ -9,12 +9,10 @@ class HomeController < ApplicationController
 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|
       c.title(text: "satisfied graph")
-      c.xAxis(categories: users_tmp, title: {text: '人'})
+      c.xAxis(categories: users_tmp)
       c.yAxis(title: {text: '満足度'},
        ceiling: 100)
-      c.series(name: "A", data: satisfied)
-      c.legend(align: 'right', verticalAlign: 'top',
-       x: 0, y: 100, layout: 'vertical')
+      c.series(name: "人", data: satisfied)
       c.chart(type: "column")
    end
   end
