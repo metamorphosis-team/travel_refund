@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_051716) do
+ActiveRecord::Schema.define(version: 2018_09_20_064408) do
 
   create_table "plans", force: :cascade do |t|
     t.string "plan_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "plan_date"
   end
 
   create_table "userplans", force: :cascade do |t|
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_051716) do
     t.integer "plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "satisfied"
   end
 
   create_table "users", force: :cascade do |t|
