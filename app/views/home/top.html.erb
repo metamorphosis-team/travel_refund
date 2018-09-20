@@ -4,15 +4,23 @@
 <% @userplans.each do |userplan| %>
 <%= userplan.user.name %>
 <%= userplan.plan.plan_name %>
+<%= userplan.satisfied %>
+<br>
 <% end %>
+
+<hr>
 
 <% @users.each do |user| %>
+<%= user.id %>
 <%= user.name %>
+<br>
 <% end %>
 
+<hr>
 <% @plans.each do |plan| %>
+<%= plan.id %>
 <%= plan.plan_name %>
-
 <%= plan.plan_date %>
+<br>
 <% end %>
 
