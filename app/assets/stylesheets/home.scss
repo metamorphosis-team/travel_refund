@@ -22,26 +22,22 @@ html {
   }
 }
 
-/* navbar 背景色*/
 .navbar-default {
-  background-color: #66CCFF	;
+  background-color: #FE9A2E	;
 }
 
-/* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
   display: block;
 }
 
-/* navbar hover,focus時のテキストカラー */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: silver;
   text-decoration: none;
 }
 
-/* navbar Brandのカラー */
 .navbar-default .navbar-brand {
-color: black;
+color: white;
 }
 
 .navbar-default .navbar-brand:focus,

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
      @plans = Plan.all
 
     users_tmp = @userplans.pluck(:user_id)
-    satisfied = @userplans.pluck(:satisfied).sort.reverse
+    satisfied = @userplans.pluck(:satisfied)
 
     @chart = LazyHighCharts::HighChart.new("graph") do |c|
       c.title(style: {fontSize: '50px'}, text: "顧客別満足度")
@@ -16,6 +16,7 @@ class HomeController < ApplicationController
         labels: {style: {fontSize: '30px'}})
       c.series(name:"ユーザーID", data: satisfied)
       c.chart(type: "column", height: 700)
+      c.colors(['#FE9A2E'])
    end
   end
 

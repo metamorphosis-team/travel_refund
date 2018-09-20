@@ -10471,3 +10471,435 @@ Processing by HomeController#top as HTML
 Completed 200 OK in 53ms (Views: 45.8ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-09-20 21:35:27 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  [1m[36mUserplan Load (0.7ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Userplan Load (0.0ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.7ms)
+
+
+  
+  [1m[36mCACHE Userplan Load (0.0ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `red' for #<HomeController:0x00007f88dc276a20>):
+  
+app/controllers/home_controller.rb:18:in `block in top'
+app/controllers/home_controller.rb:10:in `new'
+app/controllers/home_controller.rb:10:in `top'
+Started GET "/" for 127.0.0.1 at 2018-09-20 21:54:22 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  [1m[36mUserplan Load (0.2ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Userplan Load (0.0ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 0.9ms)
+
+
+  
+  [1m[36mCACHE Userplan Load (0.0ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `red' for #<HomeController:0x000055b31feba668>):
+  
+app/controllers/home_controller.rb:19:in `block in top'
+app/controllers/home_controller.rb:10:in `new'
+app/controllers/home_controller.rb:10:in `top'
+Started GET "/" for 127.0.0.1 at 2018-09-20 21:56:05 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  [1m[36mUserplan Load (0.3ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Userplan Load (0.0ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.7ms)
+
+
+  
+  [1m[36mCACHE Userplan Load (0.0ms)[0m  [1m[34mSELECT  "userplans".* FROM "userplans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `red' for #<HomeController:0x00007f88d52fc848>):
+  
+app/controllers/home_controller.rb:19:in `block in top'
+app/controllers/home_controller.rb:10:in `new'
+app/controllers/home_controller.rb:10:in `top'
+Started GET "/" for 127.0.0.1 at 2018-09-20 21:56:30 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 21:57:09 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 29.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/data" for 127.0.0.1 at 2018-09-20 22:00:24 +0900
+Processing by HomeController#data as HTML
+  Rendering home/data.html.erb within layouts/application
+  [1m[36mUserplan Load (0.2ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/data.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/data.html.erb:12
+  [1m[36mPlan Load (0.5ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/data.html.erb:19
+  Rendered home/data.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 80ms (Views: 70.0ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:02:37 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 57ms (Views: 50.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:04:07 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 23ms (Views: 17.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:35:52 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 20.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:39:25 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 17.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:40:02 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 23.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:42:11 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 22:44:52 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 23:02:32 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 59ms (Views: 42.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/data" for 127.0.0.1 at 2018-09-20 23:02:38 +0900
+Processing by HomeController#data as HTML
+  Rendering home/data.html.erb within layouts/application
+  [1m[36mUserplan Load (0.6ms)[0m  [1m[34mSELECT "userplans".* FROM "userplans"[0m
+  ↳ app/views/home/data.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mPlan Load (0.1ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:5
+  [1m[36mCACHE Plan Load (0.0ms)[0m  [1m[34mSELECT  "plans".* FROM "plans" WHERE "plans"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/home/data.html.erb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/home/data.html.erb:12
+  [1m[36mPlan Load (0.2ms)[0m  [1m[34mSELECT "plans".* FROM "plans"[0m
+  ↳ app/views/home/data.html.erb:19
+  Rendered home/data.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 86ms (Views: 74.6ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-20 23:02:46 +0900
+Processing by HomeController#top as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 55ms (Views: 47.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 03:35:03 +0900
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#top as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 393ms (Views: 368.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-09-21 03:36:52 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ryuto/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#top as HTML
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "userplans"."user_id" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "userplans"."satisfied" FROM "userplans"[0m
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/top.html.erb within layouts/application
+  Rendered home/top.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 224ms (Views: 204.9ms | ActiveRecord: 5.3ms)
+
+
